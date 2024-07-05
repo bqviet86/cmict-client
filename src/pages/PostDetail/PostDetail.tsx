@@ -22,7 +22,12 @@ function PostDetail() {
         <Panel title={post?.title || ''} titlePosition='left' titleTransform='none' color='#e74c3c'>
             {post ? (
                 <>
-                    <ReactMarkdown className='markdown-html markdown-html-display'>{post.content}</ReactMarkdown>
+                    <ReactMarkdown className='markdown-html markdown-html-display'>
+                        {post.content.replace(
+                            /http:\/\/localhost:4000\/static\/image/g,
+                            import.meta.env.VITE_IMAGE_URL_PREFIX
+                        )}
+                    </ReactMarkdown>
                     <div className='mt-2.5 text-right font-system font-bold'>{post.author}</div>
                 </>
             ) : (
