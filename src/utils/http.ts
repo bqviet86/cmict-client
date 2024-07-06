@@ -8,7 +8,7 @@ import { getTokenFromLS, setTokenToLS } from './localStorage'
 
 export const requestConfig: CreateAxiosDefaults | AxiosRequestConfig = {
     baseURL: import.meta.env.VITE_API_URL as string, // http://localhost:4000
-    timeout: 15000
+    // timeout: 15000
 }
 
 class Http {
